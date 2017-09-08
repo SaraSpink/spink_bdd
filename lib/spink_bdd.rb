@@ -1,6 +1,8 @@
 #! usr/bin/env ruby
 class Anagram
-  def initialize
+  def initialize (firstword, secondword)
+    @firstword = firstword
+    @secondword = secondword
   end
 
   def anagram_maker(word)
@@ -11,10 +13,10 @@ class Anagram
     word.reverse
   end
 
-  def anagram_evaluator(input1, input2)
+  def anagram_evaluator
     compare = []
-    compare.push(input1.downcase)
-    compare.push(input2.downcase)
+    compare.push(@firstword.downcase)
+    compare.push(@secondword.downcase)
 
     compare1 = compare.at(0)
     compare2 = compare.at(1)
@@ -22,16 +24,28 @@ class Anagram
     if compare1 === compare2
       puts "Not an anagram"
       return false
-    elsif anagram_maker(compare1) === anagram_maker(compare2)
+    else anagram_maker(compare1) == anagram_maker(compare2)
       puts "This is an anagram"
       return true
-    elsif (anagram_maker(compare1) == anagram_maker(compare2)) && (palindrome_maker(compare1) == (palindrome_maker(compare2)))
-      puts "This is a palindrome"
-      return true
     end
-
-
   end
+
+  # def palindrome_evaluator(pal1, pal2)
+  #   compare = []
+  #   compare.push(pal1.downcase)
+  #   compare.push(pal2.downcase)
+  #
+  #   compare1 = compare.at(0)
+  #   compare2 = compare.at(1)
+  #
+  #   if compare1 === compare2
+  #     puts "Not an palindrome"
+  #     return false
+  #   else palindrome_maker(compare1) == palindrome_maker(compare2)
+  #     puts "This is palindrome"
+  #     return true
+  #   end
+  # end
 
 end
 
