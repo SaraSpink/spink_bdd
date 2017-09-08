@@ -8,6 +8,8 @@ puts "now enter a word to compare: "
 
 newanagram = Anagram.new(userword1, userword2)
 
+puts anagram_evaluator
+
 
 
   # if compare1 === compare2

@@ -37,6 +37,15 @@ describe('#spink_bdd') do
     expect(d.isword("zxzy")).to(eq(false))
   end
 
+  e = Anagram.new("Baby", "duck")
+  it ("is an antigram if no letters match") do
+    expect(d.antigram_evaluator).to(eq(true))
+  end
+
+  f = Anagram.new("fabled", "ironic boy")
+  it ("accounts for multiple words being antigrams and returns true if the words are antigrams") do
+    expect(f.antigram_evaluator).to(eq(true))
+  end
 
 
 end
