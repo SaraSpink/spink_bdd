@@ -1,14 +1,14 @@
 #! usr/bin/env ruby
 require_relative ('spink_bdd.rb')
 
-newanagram = Anagram.new()
-
 puts "Let's compare two words. Enter your word: "
-  firstword = gets.chomp
+  userword1 = gets.chomp
 puts "now enter a word to compare: "
-  secondword = gets.chomp
+  userword2 = gets.chomp
 
-return newanagram.anagram_evaluator(firstword, secondword)
+newanagram = Anagram.new(userword1, userword2)
+
+
 
   # if compare1 === compare2
   #   puts "Not an anagram"

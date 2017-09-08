@@ -21,8 +21,6 @@ class Anagram
     end
   end
 
-
-
   def anagram_evaluator
     compare = []
     compare.push(@firstword.downcase)
