@@ -30,22 +30,21 @@ class Anagram
     end
   end
 
-  # def palindrome_evaluator(pal1, pal2)
-  #   compare = []
-  #   compare.push(pal1.downcase)
-  #   compare.push(pal2.downcase)
-  #
-  #   compare1 = compare.at(0)
-  #   compare2 = compare.at(1)
-  #
-  #   if compare1 === compare2
-  #     puts "Not an palindrome"
-  #     return false
-  #   else palindrome_maker(compare1) == palindrome_maker(compare2)
-  #     puts "This is palindrome"
-  #     return true
-  #   end
-  # end
+  def palindrome_evaluator
+    compare = []
+    compare.push(@firstword.downcase)
+    compare.push(@secondword.downcase)
+
+    compare1 = compare.at(0)
+    compare2 = compare.at(1)
+
+    if compare1 === compare2
+      return false
+    else palindrome_maker(compare1) == palindrome_maker(compare2)
+      puts "This is palindrome"
+      return true
+    end
+  end
 
 end
 
