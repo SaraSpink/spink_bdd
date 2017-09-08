@@ -4,8 +4,11 @@ class Anagram
   end
 
   def anagram_maker(word)
-    newarray = word.chars
-    newarray.sort
+    word.chars.sort
+  end
+
+  def palindrome_maker(word)
+    word.reverse
   end
 
   def anagram_evaluator(input1, input2)
@@ -17,12 +20,19 @@ class Anagram
     compare2 = compare.at(1)
 
     if compare1 === compare2
+      puts "Not an anagram"
       return false
-    elsif compare1 === anagram_maker(compare2)
+    elsif anagram_maker(compare1) === anagram_maker(compare2)
+      puts "This is an anagram"
+      return true
+    elsif (anagram_maker(compare1) == anagram_maker(compare2)) && (palindrome_maker(compare1) == (palindrome_maker(compare2)))
+      puts "This is a palindrome"
       return true
     end
 
+
   end
+
 end
 
 

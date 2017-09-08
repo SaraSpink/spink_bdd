@@ -12,11 +12,16 @@ describe('#spink_bdd') do
   it ("takes a word and returns a sorted array") do
     expect(newanagram.anagram_maker("bear")).to(eq(["a", "b", "e", "r"]))
   end
-  ############### ORIGINAL TESTS #################
-  # it ("takes a word and returns the word in reverse") do
-  #   expect(newanagram.anagram_maker("cat")).to(eq("tac"))
-  # end
-  #
+
+  it ("returns true if two words or phrases contain the same letters and spaces")do
+    expect(newanagram.anagram_evaluator("a ruby", "a bury")).to(eq(true))
+  end
+
+  ############# ORIGINAL TESTS #################
+  it ("takes a word and returns the word in reverse") do
+    expect(newanagram.palindrome_maker("cat")).to(eq("tac"))
+  end
+
   # it ("returns false if two words are not anagrams") do
   #   expect(newanagram.anagram_array("dog", "dog")).to(eq(false))
   # end
