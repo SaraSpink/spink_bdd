@@ -33,5 +33,10 @@ describe('#spink_bdd') do
     expect(d.palindrome_evaluator()).to(eq(true))
   end
 
+  it ("determines if a word is truly a word and returns false if a word has no vowels") do
+    expect(d.isword("zxzy")).to(eq(false))
+  end
+
+
 
 end

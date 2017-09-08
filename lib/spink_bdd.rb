@@ -13,6 +13,16 @@ class Anagram
     word.reverse
   end
 
+  def isword(word)
+    if word.scan(/[aeiou]/).count >= 1
+      return true
+    else
+      return false
+    end
+  end
+
+
+
   def anagram_evaluator
     compare = []
     compare.push(@firstword.downcase)
