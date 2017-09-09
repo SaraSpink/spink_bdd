@@ -42,7 +42,7 @@ describe('#spink_bdd') do
     expect(d.antigram_evaluator).to(eq(true))
   end
 
-  f = Anagram.new("fabled", "ironic boy")
+  f = Anagram.new("fabled", "ooh boy")
   it ("accounts for multiple words being antigrams and returns true if the words are antigrams") do
     expect(f.antigram_evaluator).to(eq(true))
   end
