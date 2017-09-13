@@ -27,15 +27,3 @@ end
 if new_anagram.antigram_evaluator() == true
   puts "These words are antigrams!"
 end
-
-
-  # if compare1 === compare2
-  #   puts "Not an anagram"
-  #   return false
-  # elsif (anagram_maker(compare1)) == (anagram_maker(compare2)) && (palindrome_maker(compare1)) != (palindrome_maker(compare2))
-  #   puts "This is an anagram"
-  #   return true
-  # elsif anagram_maker(compare1) == anagram_maker(compare2) && palindrome_maker(compare1) == palindrome_maker(compare2)
-  #   puts "This is a palindrome"
-  #   return true
-  # end
