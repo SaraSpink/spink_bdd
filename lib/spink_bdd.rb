@@ -1,8 +1,8 @@
 #! usr/bin/env ruby
 class Anagram
   def initialize (firstword, secondword)
-    @firstword = firstword
-    @secondword = secondword
+    @firstword = firstword.downcase.gsub(/\s+/, "")
+    @secondword = secondword.downcase.gsub(/\s+/, "")
   end
 
   def anagram_maker(word)
@@ -22,33 +22,33 @@ class Anagram
   end
 
   def anagram_evaluator
-    if @firstword === @secondword
-      puts "Not an anagram"
+    if @firstword == @secondword
       return false
-    else anagram_maker(@firstword) == anagram_maker(@secondword)
-      puts "This is an anagram"
+    end
+    
+    if anagram_maker(@firstword) == anagram_maker(@secondword)
+      # puts "These words are anagrams"
       return true
+    else
+      return false
     end
   end
 
   def palindrome_evaluator
-    if @firstword === @secondword
-      return false
-    else palindrome_maker(@firstword) == palindrome_maker(@secondword)
-      puts "This is a palindrome"
+    if @firstword == palindrome_maker(@secondword)
+      # puts "These words are palindromes"
       return true
+    else
+      return false
     end
   end
 
   def antigram_evaluator
-    anti1 = @firstword.downcase.gsub(/\s+/, "")
-    anti2 = @secondword.downcase.gsub(/\s+/, "")
-    
-    if (anti1.chars & anti2.chars).empty?
-      puts "this is an antigram"
-      true
+    if (@firstword.chars & @secondword.chars).empty?
+      # puts "These words are antigrams"
+      return true
     else
-      false
+      return false
     end
 
   end

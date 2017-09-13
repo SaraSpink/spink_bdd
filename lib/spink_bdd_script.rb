@@ -6,10 +6,27 @@ puts "Let's compare two words. Enter your word: "
 puts "now enter a word to compare: "
   userword2 = gets.chomp
 
-newanagram = Anagram.new(userword1, userword2)
+new_anagram = Anagram.new(userword1, userword2)
 
-puts anagram_evaluator
+if userword1 == userword2
+  puts "These words are not anagrams."
+end
 
+if new_anagram.anagram_evaluator() == true
+  puts "#{userword1} and #{userword2} are anagrams!"
+else
+  puts "These words are not anagrams."
+end
+
+if new_anagram.palindrome_evaluator() == true
+  puts "#{userword1} and #{userword2} are also palindromes."
+else
+  puts "The words are not palindromes."
+end
+
+if new_anagram.antigram_evaluator() == true
+  puts "These words are antigrams!"
+end
 
 
   # if compare1 === compare2
