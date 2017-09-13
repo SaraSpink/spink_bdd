@@ -11,6 +11,13 @@ describe ('Anagram#anagram_maker') do
   end
 end
 
+describe ('Anagram#isword') do
+  it ("returns false if a word is not a word (has no vowels)") do
+    newanagram = Anagram.new("word1", "word2")
+    expect(newanagram.isword("xkcd")).to(eq(false))
+  end
+end
+
 describe('Anagram#anagram_evaluator') do
   it ("returns false if two words are exactly the same") do
     newanagram = Anagram.new("bear", "bear")
@@ -52,7 +59,7 @@ describe('Anagram#antigram_evaluator') do
   end
 
   it ("accounts for multiple words being antigrams and returns true if the words are antigrams") do
-    newanagram = Anagram.new("fabled", "too much") 
+    newanagram = Anagram.new("fabled", "too much")
     expect(newanagram.antigram_evaluator).to(eq(true))
   end
 end

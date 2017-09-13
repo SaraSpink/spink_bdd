@@ -22,33 +22,19 @@ class Anagram
   end
 
   def anagram_evaluator
-    compare = []
-    compare.push(@firstword.downcase)
-    compare.push(@secondword.downcase)
-
-    compare1 = compare.at(0)
-    compare2 = compare.at(1)
-
-    if compare1 === compare2
+    if @firstword === @secondword
       puts "Not an anagram"
       return false
-    else anagram_maker(compare1) == anagram_maker(compare2)
+    else anagram_maker(@firstword) == anagram_maker(@secondword)
       puts "This is an anagram"
       return true
     end
   end
 
   def palindrome_evaluator
-    compare = []
-    compare.push(@firstword.downcase)
-    compare.push(@secondword.downcase)
-
-    compare1 = compare.at(0)
-    compare2 = compare.at(1)
-
-    if compare1 === compare2
+    if @firstword === @secondword
       return false
-    else palindrome_maker(compare1) == palindrome_maker(compare2)
+    else palindrome_maker(@firstword) == palindrome_maker(@secondword)
       puts "This is a palindrome"
       return true
     end
@@ -57,7 +43,7 @@ class Anagram
   def antigram_evaluator
     anti1 = @firstword.downcase.gsub(/\s+/, "")
     anti2 = @secondword.downcase.gsub(/\s+/, "")
-
+    
     if (anti1.chars & anti2.chars).empty?
       puts "this is an antigram"
       true
